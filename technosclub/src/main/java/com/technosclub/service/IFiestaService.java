@@ -4,11 +4,14 @@ import com.technosclub.model.Fiesta;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public interface IFiestaService {
     public List<Fiesta>verFiestas();
-    public Fiesta verFiesta(Long id);
+
+    Optional<Fiesta> verFiesta(long id);
+
     public void borrarFiesta(long id);
     public void nuevaFiesta(Fiesta fiesta);
 

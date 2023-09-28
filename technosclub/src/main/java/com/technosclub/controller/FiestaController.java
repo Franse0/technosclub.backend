@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "**")
+@CrossOrigin(origins = "*")
 
 public class FiestaController {
     @Autowired
@@ -22,16 +23,16 @@ public class FiestaController {
 
     @GetMapping("/fiesta/{id}")
     @ResponseBody
-    public Fiesta verFiesta(@RequestParam Long id){
+    public Optional<Fiesta> verFiesta(@PathVariable Long id){
         return fiestaService.verFiesta(id);
     }
 
-    @DeleteMapping("/borrar/{di}")
-    public void borrarFiesta(@RequestParam Long id){
+    @DeleteMapping("/fiesta/borrar/{id}")
+    public void borrarFiesta(@PathVariable long id){
         fiestaService.borrarFiesta(id);
     }
 
-    @PostMapping("/fiesta/nueva")
+    @PostMapping("/fiesta")
     public void fiestaNueva(@RequestBody Fiesta fiesta){
         fiestaService.nuevaFiesta(fiesta);
     }
