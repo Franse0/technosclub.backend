@@ -21,6 +21,7 @@ public class Artista {
     private String soundcloud;
     private String spotify;
     private String instagram;
+    @Column (length = 2500)
     private String descripcion;
 
     public Artista() {

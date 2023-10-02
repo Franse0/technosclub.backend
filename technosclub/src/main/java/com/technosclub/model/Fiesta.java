@@ -17,8 +17,10 @@ public class Fiesta {
     private String img;
     private String fecha;
     private String djs;
+    @Column(length = 500)
     private String ubicacion;
     private String precio;
+    @Column(length = 1500)
     private String descripcion;
     private String organiza;
 

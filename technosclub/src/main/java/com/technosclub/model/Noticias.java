@@ -13,7 +13,9 @@ public class Noticias {
     private Long id;
     @Basic
     private String titulo;
+    @Column(length = 2500)
     private String cuerpo;
+    @Column(length = 1500)
     private String resumen;
     private String fecha_publi;
     private String img;

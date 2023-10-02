@@ -14,11 +14,13 @@ public class Lugares {
     private Long id;
     @Basic
     private String nombre;
+    @Column(length = 2500)
     private String descripcion;
     private String img1;
     private String img2;
     private String instagram;
     private String ubicacion;
+    @Column(length = 500)
     private String link_ubi;
 
 
