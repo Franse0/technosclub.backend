@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -22,8 +23,8 @@ public class NoticiasController {
 
     @GetMapping("/noticia/{id}")
     @ResponseBody
-    public Noticias verNoticia(@PathVariable Long id){
-        return noticiasService.verNoticia(id);
+    public Optional<Noticias> verNoticia(@PathVariable Long id){
+        return  noticiasService.verNoticia(id);
     }
 
     @DeleteMapping("/noticia/borrar/{id}")

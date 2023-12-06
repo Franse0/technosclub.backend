@@ -20,6 +20,10 @@ public class Lugares {
     private String img2;
     private String instagram;
     private String ubicacion;
+
+    private String facebook;
+    private String telefono;
+    private String horario;
     @Column(length = 500)
     private String link_ubi;
 

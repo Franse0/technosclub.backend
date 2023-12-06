@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -22,7 +23,7 @@ public class LugaresController {
     }
     @GetMapping("/lugar/{id}")
     @ResponseBody
-    public Lugares verLugar(@PathVariable Long id){
+    public Optional<Lugares> verLugar(@PathVariable Long id){
         return  lugaresService.verLugar(id);
     }
     @PostMapping("/lugar")

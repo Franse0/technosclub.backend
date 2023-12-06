@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class NoticiasService implements INoticiasService {
 
@@ -17,8 +19,8 @@ public class NoticiasService implements INoticiasService {
     }
 
     @Override
-    public Noticias verNoticia(Long id) {
-        return noticiasRepo.getById(id);
+    public Optional<Noticias> verNoticia(Long id) {
+        return noticiasRepo.findById(id);
     }
 
     @Override

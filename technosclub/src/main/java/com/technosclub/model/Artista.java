@@ -15,29 +15,36 @@ public class Artista {
     @Basic
     private String nombre;
     private String apellido;
+    private String pretskit;
     private String seudonimo;
     private String img;
-    private String url;
     private String soundcloud;
-    private String spotify;
     private String instagram;
+    private String spotify;
+    private String youtube;
+    private String mail;
+    private String telefono;
     @Column (length = 2500)
     private String descripcion;
 
     public Artista() {
     }
 
-    public Artista(Long id, String nombre, String apellido, String seudonimo, String img,
-                   String url, String soundcloud, String spotify, String instagram, String descripcion) {
+    public Artista(Long id, String nombre, String apellido, String pretskit, String seudonimo, String img,
+                   String soundcloud, String instagram, String spotify, String youtube,
+                   String mail, String telefono, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.pretskit = pretskit;
         this.seudonimo = seudonimo;
         this.img = img;
-        this.url = url;
         this.soundcloud = soundcloud;
-        this.spotify = spotify;
         this.instagram = instagram;
+        this.spotify = spotify;
+        this.youtube = youtube;
+        this.mail = mail;
+        this.telefono = telefono;
         this.descripcion = descripcion;
     }
 }
