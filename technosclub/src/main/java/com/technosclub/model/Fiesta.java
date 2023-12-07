@@ -19,21 +19,21 @@ public class Fiesta {
     private String djs;
     private String ubicacion;
     @Column(length = 500)
-    private String uicacion_link;
+    private String ubicacion_link;
     private String precio;
     @Column(length = 1500)
     private String descripcion;
     private String organiza;
 
     public Fiesta(Long id, String nombre, String img, String fecha, String djs,
-                  String ubicacion, String uicacion_link, String precio, String descripcion, String organiza) {
+                  String ubicacion, String ubicacion_link, String precio, String descripcion, String organiza) {
         this.id = id;
         this.nombre = nombre;
         this.img = img;
         this.fecha = fecha;
         this.djs = djs;
         this.ubicacion = ubicacion;
-        this.uicacion_link = uicacion_link;
+        this.ubicacion_link = ubicacion_link;
         this.precio = precio;
         this.descripcion = descripcion;
         this.organiza = organiza;

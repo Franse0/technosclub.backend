@@ -1,5 +1,9 @@
 package com.technosclub.model;
 
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.technosclub.util.HtmlEncodingHelper;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,16 +17,17 @@ public class Noticias {
     private Long id;
     @Basic
     private String titulo;
-    @Column(length = 2500)
+    @Column(length = 2500, columnDefinition = "TEXT")
     private String cuerpo;
     @Column(length = 1500)
     private String resumen;
     private String fecha_publi;
     private String img;
     private String url;
+
+
     public Noticias() {
     }
-
     public Noticias(Long id, String titulo, String cuerpo, String resumen, String fecha_publi, String img, String url) {
         this.id = id;
         this.titulo = titulo;
@@ -31,5 +36,14 @@ public class Noticias {
         this.fecha_publi = fecha_publi;
         this.img = img;
         this.url = url;
+    }
+
+    public void encodeCuerpoHtml() {
+        this.cuerpo = HtmlEncodingHelper.encodeHtml(this.cuerpo);
+    }
+
+    // Método para decodificar el cuerpo HTML
+    public void decodeCuerpoHtml() {
+        this.cuerpo = HtmlEncodingHelper.decodeHtml(this.cuerpo);
     }
 }

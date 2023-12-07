@@ -1,5 +1,7 @@
 package com.technosclub.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.technosclub.model.Noticias;
 import com.technosclub.service.NoticiasService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +35,6 @@ public class NoticiasController {
     }
 
 
-    @PostMapping("/noticia")
-    public void nuevaNoticia(@RequestBody Noticias noticia){
-        noticiasService.nuevaNoticia(noticia);
-    }
+
 
 }
