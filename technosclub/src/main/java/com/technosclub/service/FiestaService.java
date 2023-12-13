@@ -4,6 +4,7 @@ import com.technosclub.model.Fiesta;
 import com.technosclub.respository.FiestaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,5 +32,9 @@ public class FiestaService implements IFiestaService{
     @Override
     public void nuevaFiesta(Fiesta fiesta) {
         fiestaRepo.save(fiesta);
+    }
+
+    public List<Fiesta> buscarFiestasNombreUbicacion(@PathVariable String parametro){
+        return fiestaRepo.buscarFiestaIgnoreCase(parametro);
     }
 }

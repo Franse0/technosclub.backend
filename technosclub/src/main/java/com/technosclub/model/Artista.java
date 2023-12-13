@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "artistas")
 @Getter @Setter
@@ -18,6 +20,7 @@ public class Artista {
     private String pretskit;
     private String seudonimo;
     private String img;
+    private String img_list;
     private String soundcloud;
     private String instagram;
     private String spotify;
@@ -30,15 +33,16 @@ public class Artista {
     public Artista() {
     }
 
-    public Artista(Long id, String nombre, String apellido, String pretskit, String seudonimo, String img,
-                   String soundcloud, String instagram, String spotify, String youtube,
-                   String mail, String telefono, String descripcion) {
+    public Artista(Long id, String nombre, String apellido, String pretskit, String seudonimo,
+                   String img, String img_list, String soundcloud,
+                   String instagram, String spotify, String youtube, String mail, String telefono, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.pretskit = pretskit;
         this.seudonimo = seudonimo;
         this.img = img;
+        this.img_list = img_list;
         this.soundcloud = soundcloud;
         this.instagram = instagram;
         this.spotify = spotify;
@@ -46,5 +50,9 @@ public class Artista {
         this.mail = mail;
         this.telefono = telefono;
         this.descripcion = descripcion;
+    }
+    public void setImgs(List<String> imgs) {
+        // Puedes usar String.join para convertir la lista a una cadena con comas entre elementos.
+        this.img_list = String.join(", ", imgs);
     }
 }

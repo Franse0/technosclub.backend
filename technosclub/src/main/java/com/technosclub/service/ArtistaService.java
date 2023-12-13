@@ -36,4 +36,17 @@ public class ArtistaService implements IArtistaService {
     public void borrarArtista(long id) {
     artistaRepository.deleteById(id);
     }
+
+    @Override
+    public List<Artista> buscarPorNombre(String nombre) {
+        return null;
+    }
+
+    public List<Artista> buscarArtistasPorNombre(String nombre) {
+        return artistaRepository.buscarPorSeudonimoIgnoreCase(nombre);
+    }
+
+    public Optional<Artista> verificarSiExiste(String seudonimo){
+        return artistaRepository.comprobarSiExiste(seudonimo);
+    }
 }

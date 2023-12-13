@@ -3,6 +3,7 @@ package com.technosclub.controller;
 import com.technosclub.model.Fiesta;
 import com.technosclub.service.FiestaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,5 +36,11 @@ public class FiestaController {
     @PostMapping("/fiesta")
     public void fiestaNueva(@RequestBody Fiesta fiesta){
         fiestaService.nuevaFiesta(fiesta);
+    }
+
+    @GetMapping("/fiesta/buscar/{parametro}")
+    public ResponseEntity<List<Fiesta>>buscarFiesta(@PathVariable String parametro){
+        List<Fiesta> resultados = fiestaService.buscarFiestasNombreUbicacion(parametro);
+        return ResponseEntity.ok(resultados);
     }
 }

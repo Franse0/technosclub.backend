@@ -35,4 +35,9 @@ public class EntidadService implements IEntidadService {
     public void borrarEntidad(long id) {
         entidadRepository.deleteById(id);
     }
+
+
+    public List<Entidad>buscarEntidadPorNombre(String nombre){
+        return entidadRepository.buscarPorNombreIgnoreCase(nombre);
+    }
 }

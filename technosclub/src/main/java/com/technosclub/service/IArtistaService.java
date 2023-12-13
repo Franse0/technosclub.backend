@@ -14,6 +14,7 @@ public interface IArtistaService {
     public List<Artista> verArtistas();
     public void nuevoArtista(Artista artista);
     public void borrarArtista(long id);
+    public List<Artista> buscarPorNombre(String nombre);
 
 
 

@@ -3,6 +3,7 @@ package com.technosclub.controller;
 import com.technosclub.model.Lugares;
 import com.technosclub.service.LugaresService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,5 +35,11 @@ public class LugaresController {
     @DeleteMapping("/lugar/borrar/{id}")
     public void borrarLugar(@PathVariable Long id){
         lugaresService.borrarLugar(id);
+    }
+
+    @GetMapping("/lugar/buscar/{parametro}")
+    public ResponseEntity<List<Lugares>>buscarLugares(@PathVariable String parametro){
+        List<Lugares> resultados = lugaresService.buscarLugaresNombreUbicacion(parametro);
+        return ResponseEntity.ok(resultados);
     }
 }

@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "*")
+//@RequestMapping("/noticia")
+@CrossOrigin(origins = "http://localhost:4200")
+
 public class NoticiasController {
 
     @Autowired
@@ -34,7 +36,11 @@ public class NoticiasController {
         noticiasService.borrarNoticia(id);
     }
 
-
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/noticia")
+    public void crearNoticia(@RequestBody Noticias noticias){
+        noticiasService.nuevaNoticia(noticias);
+    }
 
 
 }
