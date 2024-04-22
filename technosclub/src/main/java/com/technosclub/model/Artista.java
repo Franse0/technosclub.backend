@@ -26,7 +26,6 @@ public class Artista {
     private String spotify;
     private String youtube;
     private String mail;
-    private String telefono;
     @Column (length = 2500)
     private String descripcion;
 
@@ -35,7 +34,7 @@ public class Artista {
 
     public Artista(Long id, String nombre, String apellido, String pretskit, String seudonimo,
                    String img, String img_list, String soundcloud,
-                   String instagram, String spotify, String youtube, String mail, String telefono, String descripcion) {
+                   String instagram, String spotify, String youtube, String mail,  String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -48,7 +47,6 @@ public class Artista {
         this.spotify = spotify;
         this.youtube = youtube;
         this.mail = mail;
-        this.telefono = telefono;
         this.descripcion = descripcion;
     }
     public void setImgs(List<String> imgs) {

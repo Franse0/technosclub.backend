@@ -23,19 +23,18 @@ public class Noticias {
     private String resumen;
     private String fecha_publi;
     private String img;
-    private String url;
 
 
     public Noticias() {
     }
-    public Noticias(Long id, String titulo, String cuerpo, String resumen, String fecha_publi, String img, String url) {
+    public Noticias(Long id, String titulo, String cuerpo, String resumen,
+                    String fecha_publi, String img) {
         this.id = id;
         this.titulo = titulo;
         this.cuerpo = cuerpo;
         this.resumen = resumen;
         this.fecha_publi = fecha_publi;
         this.img = img;
-        this.url = url;
     }
 
     public void encodeCuerpoHtml() {

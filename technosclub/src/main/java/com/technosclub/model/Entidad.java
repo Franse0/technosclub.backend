@@ -24,7 +24,6 @@ public class Entidad {
     private String facebook;
     private String tiktok;
     private String mail;
-    private String telefono;
     private String youtube;
     @Column
     private String video_yt;
@@ -32,7 +31,7 @@ public class Entidad {
     private String descripcion;
 
     public Entidad(int id, String nombre, String img, String img_list, String instagram, String facebook,
-                   String tiktok, String mail, String telefono, String youtube, String video_yt, String descripcion) {
+                   String tiktok, String mail, String youtube, String video_yt, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.img = img;
@@ -41,7 +40,6 @@ public class Entidad {
         this.facebook = facebook;
         this.tiktok = tiktok;
         this.mail = mail;
-        this.telefono = telefono;
         this.youtube = youtube;
         this.video_yt = video_yt;
         this.descripcion = descripcion;
