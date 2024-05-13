@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Map;
 @RestController
-@RequestMapping("media")
+@RequestMapping("/api/media")
 @AllArgsConstructor
 public class FileController {
     private final StorageService storageService;
@@ -42,7 +42,9 @@ public class FileController {
     @GetMapping("{filename:.+}")
     public ResponseEntity<Resource> getFile(@PathVariable String filename) throws IOException {
         Resource file = storageService.loadResource(filename);
-        String contentType = Files.probeContentType(file.getFile().toPath());
+//        String contentType = Files.probeContentType(file.getFile().toPath());
+        String contentType = request.getServletContext().getMimeType(filename);
+
 
         return  ResponseEntity
                 .ok()

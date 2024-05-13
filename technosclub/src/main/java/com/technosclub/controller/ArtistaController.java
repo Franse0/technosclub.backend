@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "*")
+@RequestMapping("/api")
+
 public class ArtistaController {
 
     @Autowired
@@ -39,6 +40,7 @@ public class ArtistaController {
     public void borrarArtista(@PathVariable long id){
         artistaService.borrarArtista(id);
     }
+
 
 
 

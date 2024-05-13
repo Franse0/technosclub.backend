@@ -13,12 +13,14 @@ import java.util.Optional;
 public interface ArtistaRepository extends JpaRepository<Artista, Long> {
 
 
-    @Query("SELECT a FROM Artista a WHERE LOWER(a.seudonimo) = LOWER(:parametro) OR LOWER(a.nombre) = LOWER(:parametro)")
-    List<Artista> buscarPorSeudonimoIgnoreCase(@Param("parametro") String parametro);
+//    @Query(value="SELECT a FROM artistas a WHERE LOWER(a.seudonimo) = LOWER(:parametro) OR LOWER(a.nombre) = LOWER(:parametro)", nativeQuery = true)
+  //  List<Artista> buscarPorSeudonimoIgnoreCase(@Param("parametro") String parametro);
+//@Query("SELECT a FROM Artista a WHERE LOWER(a.seudonimo) = LOWER(:parametro) OR LOWER(a.nombre) = LOWER(:parametro)")
+@Query(value = "SELECT * FROM artistas WHERE LOWER(nombre) LIKE LOWER(CONCAT('%', :parametro, '%')) OR LOWER(seudonimo) LIKE LOWER(CONCAT('%', :parametro, '%'))", nativeQuery = true)
 
+List<Artista> buscarPorSeudonimoIgnoreCase(@Param("parametro") String parametro);
     @Query(value = "SELECT a.id FROM artistas a WHERE LOWER(a.seudonimo) = LOWER(:parametro)", nativeQuery = true)
     Optional<Artista> comprobarSiExiste(@Param("parametro") String parametro);
-
 
 
 }
